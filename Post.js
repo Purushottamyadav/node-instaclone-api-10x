@@ -18,7 +18,7 @@ const postModal =mongoose.model("instaposts",postSchema);
 
 
 // connect with db
-mongoose.connect("mongodb+srv://root1:10xacademy@cluster0.w33wai5.mongodb.net/?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true },
+mongoose.connect("mongodb+srv://instaclone:instaclone@cluster0.k6nrd93.mongodb.net/?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("successfully connected to db");
   },
@@ -44,7 +44,7 @@ app.use(cors())
     res.send("instaclone backend")
   })
 
-  app.post('/new',(req,res)=>{
+  app.post('/new', cors(),(req,res)=>{
     const date = new Date
       let finalDate = date + ""
       finalDate = finalDate.split(" ");
